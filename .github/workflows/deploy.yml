@@ -50,6 +50,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist/public
+          
 
   deploy:
     name: Publish website
