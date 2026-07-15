@@ -1,106 +1,117 @@
-# RoadReady — UK Driving Theory বাংলা
+# RoadReady
 
-An interactive English–Bangla study application for the Great Britain Category B car theory test. It turns Hasan's complete bilingual workbook into a responsive practice system that works on desktop and mobile.
+An interactive English–Bangla study app for practising the Great Britain Category B car theory test.
 
-## What is included
+**Live app:** [hasansust32.github.io/RoadReady](https://hasansust32.github.io/RoadReady/)
 
-- 640 original bilingual workbook MCQs across Weeks 3–10
-- 160 core rules with English and Bangla explanations
-- 8 supplementary 2026 CPR/AED questions and 5 update rules
-- Smart Practice: mixed topics, individual weeks, mistakes, or bookmarks
-- A 50-question, 57-minute mock test with flags, question map, and 43/50 pass target
-- Persistent progress, learned rules, score, streak, mistakes, bookmarks, and best mock score
-- Essential-numbers reference, including stopping distances and speed limits
-- English driving-theory vocabulary cards with Bangla pronunciation and meaning
-- Interactive developing-hazard timing demonstration
-- English-only, Bangla-only, and dual-language display modes
-- Responsive mobile navigation and installable web-app metadata
+[![Deploy RoadReady to GitHub Pages](https://github.com/hasansust32/RoadReady/actions/workflows/deploy.yml/badge.svg)](https://github.com/hasansust32/RoadReady/actions/workflows/deploy.yml)
 
-Progress is stored in the browser with `localStorage`; no account or database is required.
+## Features
+
+- 648 bilingual practice questions: 640 workbook MCQs plus 8 CPR/AED update questions
+- 165 English–Bangla learning rules across traffic signs, road safety, motorways, incidents, and more
+- Smart practice by topic, mistakes, bookmarks, or mixed questions
+- 50-question, 57-minute mock tests with flags, navigation, and a 43/50 pass target
+- English, Bangla, and dual-language display modes
+- Essential-number references for speed limits, stopping distances, and safety rules
+- Driving-theory vocabulary cards with Bangla pronunciation and meaning
+- Interactive hazard-perception timing demonstration
+- Persistent scores, streaks, learned rules, mistakes, bookmarks, and mock-test results
+- Responsive layout for desktop and mobile
+
+Progress is saved in the browser using `localStorage`. No account or database is required.
+
+## Content coverage
+
+| Section | Topic | Questions | Rules |
+| --- | --- | ---: | ---: |
+| Week 3 | Traffic signs | 80 | 20 |
+| Week 4 | Speed, signals, road markings, and key numbers | 80 | 20 |
+| Week 5 | Junctions, roundabouts, and crossings | 80 | 20 |
+| Week 6 | Overtaking, vulnerable road users, and following distance | 80 | 20 |
+| Week 7 | Vehicle safety, passengers, and legal documents | 80 | 20 |
+| Week 8 | Fitness to drive, distraction, and adverse weather | 80 | 20 |
+| Week 9 | Motorway driving and signals | 80 | 20 |
+| Week 10 | Breakdowns, incidents, and hazard perception | 80 | 20 |
+| 2026 update | CPR and automated external defibrillators | 8 | 5 |
 
 ## Run locally
 
-Requirements: Node.js 20 or newer and pnpm.
+### Requirements
+
+- Node.js 24
+- pnpm 10.4.1
 
 ```bash
 git clone https://github.com/hasansust32/RoadReady.git
 cd RoadReady
+corepack enable
+corepack prepare pnpm@10.4.1 --activate
 pnpm install
 pnpm run dev
 ```
 
-Open `http://localhost:3000`.
-  ➜  Local:   `http://localhost:3001/`
-  ➜  Network: `http://10.5.0.2:3001/`
-  ➜  Network: `http://192.168.1.227:3001/`
+Open [http://localhost:3000](http://localhost:3000).
 
-Useful commands:
+## Available scripts
 
-```bash
-pnpm run check          # TypeScript validation
-pnpm run build:client   # Production web build
-pnpm run preview        # Preview the production build
-```
-
-## Learning workflow
-
-1. Open **Learn** and understand each rule in Bangla.
-2. Say the English keyword and rule aloud, then mark it learned.
-3. Use **Practice** in dual-language mode and review the explanation after every answer.
-4. Repeat saved mistakes in English-only mode.
-5. Take the **Mock test** and aim for at least 43/50.
-6. Practise official video hazard clips separately; the app's hazard scene teaches timing but is not an official test clip.
-
-The real theory test is not available in Bangla. It can be taken in English, Welsh, or British Sign Language.
-
-## Content map
-
-| Week | Topic | Questions | Rules |
-| --- | --- | ---: | ---: |
-| 3 | Traffic signs | 80 | 20 |
-| 4 | Speed, signals, markings and numbers | 80 | 20 |
-| 5 | Junctions, roundabouts and crossings | 80 | 20 |
-| 6 | Overtaking, vulnerable road users and following distance | 80 | 20 |
-| 7 | Vehicle safety, occupants and legal documents | 80 | 20 |
-| 8 | Fitness to drive, distraction and adverse weather | 80 | 20 |
-| 9 | Motorway driving and signals | 80 | 20 |
-| 10 | Breakdowns, incidents and hazard perception | 80 | 20 |
-| 2026 update | CPR and automated external defibrillators | 8 | 5 |
-
-The workbook questions are original practice material, not questions copied from the live DVSA test.
+| Command | Purpose |
+| --- | --- |
+| `pnpm run dev` | Start the Vite development server |
+| `pnpm run check` | Run TypeScript validation |
+| `pnpm run build:client` | Build the static frontend into `dist/public` |
+| `pnpm run preview` | Preview the production frontend locally |
+| `pnpm run build` | Build the frontend and optional Express server |
+| `pnpm run start` | Run the production Express build |
+| `pnpm run format` | Format the project with Prettier |
 
 ## Project structure
 
 ```text
 client/
-  public/
-    questions.json          640 bilingual workbook questions
-    manifest.webmanifest    installable app metadata
-  src/
-    components/app/         dashboard and seven learning modes
-    data/content.ts         vocabulary, numbers, metadata, 2026 update
-    hooks/useLocalStorage.ts
-    pages/Home.tsx          app shell and persistent progress logic
-    index.css               responsive visual system
-server/index.ts             optional production server
-.github/workflows/deploy.yml
+├── public/
+│   ├── questions.json          # Bilingual question bank
+│   └── manifest.webmanifest    # Web-app metadata
+└── src/
+    ├── components/app/         # Dashboard and study modes
+    ├── data/content.ts         # Rules, vocabulary, numbers, and updates
+    ├── hooks/useLocalStorage.ts
+    └── pages/Home.tsx          # Application shell and progress logic
+server/index.ts                 # Optional production server
+vite.config.ts                  # Vite build and GitHub Pages base path
+.github/workflows/deploy.yml    # GitHub Pages deployment
 ```
 
-## GitHub Pages
+## Deploy to GitHub Pages
 
-Pushing to `main` runs the included workflow. It type-checks the application, builds the client with the correct repository base path, and publishes `dist/public` to the `gh-pages` branch.
+The repository uses GitHub's official Pages artifact workflow.
 
-In the repository settings, set **Pages → Build and deployment → Source** to **Deploy from a branch**, then select `gh-pages` and `/ (root)`.
+1. Open **Settings → Pages** and select **GitHub Actions** as the source.
+2. Push changes to `main`.
+3. The workflow installs dependencies, builds `dist/public`, and publishes the artifact.
+4. Follow the run under the **Actions** tab.
 
-## Official references
+Successful deployments are published at [https://hasansust32.github.io/RoadReady/](https://hasansust32.github.io/RoadReady/).
 
-Study materials and test rules can change. Check these primary sources alongside this app:
+The production base path in `vite.config.ts` must remain `/RoadReady/` while the repository uses that name.
 
-- [Theory test revision and practice](https://www.gov.uk/theory-test/revision-and-practice)
+## Data and privacy
+
+- Study progress stays in the current browser.
+- Clearing site data resets saved progress.
+- The application does not require login credentials.
+- The static GitHub Pages build does not require the optional Express server.
+
+## Important notice
+
+RoadReady is an independent revision aid. It is not affiliated with or endorsed by DVSA, and its practice questions are not copied from the live theory test. Rules and test requirements can change, so verify important information using:
+
 - [The Highway Code](https://www.gov.uk/guidance/the-highway-code)
-- [Free official practice test](https://www.gov.uk/take-practice-theory-test)
-- [2026 CPR and defibrillator question update](https://www.gov.uk/government/news/new-theory-test-questions-aim-to-boost-cardiac-arrest-survival-rate)
+- [Theory test revision and practice](https://www.gov.uk/theory-test/revision-and-practice)
+- [Official practice theory test](https://www.gov.uk/take-practice-theory-test)
+
+The hazard demonstration teaches response timing but is not an official DVSA hazard-perception clip.
 
 ## Author
 
-Prepared for **Hasan** · [@hasansust32](https://github.com/hasansust32)
+Created for **Hasan** · [@hasansust32](https://github.com/hasansust32)
