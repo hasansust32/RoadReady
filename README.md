@@ -30,6 +30,9 @@ pnpm run dev
 ```
 
 Open `http://localhost:3000`.
+  ➜  Local:   `http://localhost:3001/`
+  ➜  Network: `http://10.5.0.2:3001/`
+  ➜  Network: `http://192.168.1.227:3001/`
 
 Useful commands:
 
