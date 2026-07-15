@@ -1,0 +1,112 @@
+import type { WeekData } from "@/types";
+
+export const weekMeta: Record<string, { bn: string; short: string; shortBn: string; accent: string }> = {
+  "3": { bn: "ট্রাফিক সাইন", short: "Signs", shortBn: "সাইন", accent: "#ef5b47" },
+  "4": { bn: "গতি, সিগন্যাল, মার্কিং ও সংখ্যা", short: "Speed", shortBn: "গতি", accent: "#e58b2b" },
+  "5": { bn: "জাংশন, রাউন্ডঅ্যাবাউট ও ক্রসিং", short: "Junctions", shortBn: "জাংশন", accent: "#b7922f" },
+  "6": { bn: "ওভারটেকিং, ঝুঁকিপূর্ণ সড়ক ব্যবহারকারী ও অনুসরণ দূরত্ব", short: "Road users", shortBn: "সড়ক ব্যবহারকারী", accent: "#2e9b70" },
+  "7": { bn: "যানবাহনের নিরাপত্তা, যাত্রী ও আইনি কাগজপত্র", short: "Safety", shortBn: "নিরাপত্তা", accent: "#278daa" },
+  "8": { bn: "গাড়ি চালানোর সক্ষমতা, মনোযোগের ব্যাঘাত ও আবহাওয়া", short: "Fitness", shortBn: "সক্ষমতা", accent: "#596fb9" },
+  "9": { bn: "মোটরওয়ে ড্রাইভিং ও সিগন্যাল", short: "Motorway", shortBn: "মোটরওয়ে", accent: "#745bb1" },
+  "10": { bn: "ব্রেকডাউন, দুর্ঘটনা ও হ্যাজার্ড পারসেপশন", short: "Incidents", shortBn: "দুর্ঘটনা", accent: "#a45287" },
+  "2026": { bn: "CPR ও ডিফিব্রিলেটর আপডেট", short: "2026 update", shortBn: "২০২৬ আপডেট", accent: "#d54e4e" },
+};
+
+export const essentialNumbers = [
+  { value: "50 / 57", en: "MCQ questions / minutes", bn: "MCQ প্রশ্ন / মিনিট", memory: "Pass 43" },
+  { value: "14 / 15", en: "Hazard clips / developing hazards", bn: "হ্যাজার্ড ক্লিপ / developing hazard", memory: "Pass 44/75" },
+  { value: "12 · 23 · 36 · 53 · 73 · 96 m", en: "Stopping distances at 20–70 mph", bn: "২০–৭০ mph-এ stopping distance", memory: "20, 30, 40, 50, 60, 70" },
+  { value: "2s · 4s · ×10", en: "Following gap: dry · wet · ice", bn: "অনুসরণ দূরত্ব: শুকনা · ভেজা · বরফ", memory: "Double in rain" },
+  { value: "60 · 70 · 70 mph", en: "Car: single · dual · motorway", bn: "গাড়ি: single · dual · motorway", memory: "National limits" },
+  { value: "50 · 60 · 60 mph", en: "Towing: single · dual · motorway", bn: "ট্রেইলার: single · dual · motorway", memory: "Lower limits" },
+  { value: "1.6 mm", en: "Minimum car tyre tread", bn: "গাড়ির টায়ারের ন্যূনতম tread", memory: "Central ¾, full circumference" },
+  { value: "12 / 135 cm", en: "Child-seat rule: age or height", bn: "Child seat: বয়স অথবা উচ্চতা", memory: "Whichever comes first" },
+  { value: "1.5 m", en: "Cyclist space up to 30 mph", bn: "৩০ mph পর্যন্ত cyclist-এর পাশের দূরত্ব", memory: "More space at higher speed" },
+  { value: "2 m / under 10 mph", en: "Horse passing space / speed", bn: "ঘোড়া পাশ কাটানোর দূরত্ব / গতি", memory: "Patient and quiet" },
+  { value: "100 m", en: "Use headlights when visibility is seriously reduced", bn: "দৃশ্যমানতা খুব কম হলে headlight ব্যবহার", memory: "Generally below 100 m" },
+  { value: "21+ / 3 years", en: "Learner supervisor age / licence held", bn: "Learner supervisor-এর বয়স / licence সময়", memory: "Relevant full licence" },
+  { value: "5–6 cm", en: "Adult CPR chest-compression depth", bn: "প্রাপ্তবয়স্ক CPR chest compression-এর গভীরতা", memory: "2026 theory update" },
+];
+
+export const vocabulary = [
+  ["MUST", "মাস্ট", "আইনত অবশ্যই করতে হবে", "Exam words"],
+  ["MUST NOT", "মাস্ট নট", "আইনত করা নিষেধ", "Exam words"],
+  ["should", "শুড", "নিরাপত্তার জন্য করা উচিত", "Exam words"],
+  ["unless", "আনলেস", "যদি না / এই শর্ত ছাড়া", "Exam words"],
+  ["except", "একসেপ্ট", "বাদে / ছাড়া", "Exam words"],
+  ["safest", "সেইফেস্ট", "সবচেয়ে কম ঝুঁকিপূর্ণ", "Exam words"],
+  ["priority", "প্রায়োরিটি", "অগ্রাধিকার", "Road rules"],
+  ["give way", "গিভ ওয়ে", "অন্যকে আগে যেতে দেওয়া", "Road rules"],
+  ["prohibition", "প্রোহিবিশন", "নিষেধাজ্ঞা", "Signs"],
+  ["mandatory", "ম্যানডেটরি", "বাধ্যতামূলক", "Signs"],
+  ["warning", "ওয়ার্নিং", "সতর্কতা", "Signs"],
+  ["restriction", "রেস্ট্রিকশন", "সীমাবদ্ধতা", "Signs"],
+  ["carriageway", "ক্যারেজওয়ে", "যে অংশে যানবাহন চলে", "Road"],
+  ["dual carriageway", "ডুয়াল ক্যারেজওয়ে", "মাঝে বিভাজকসহ দুইমুখী রাস্তা", "Road"],
+  ["hard shoulder", "হার্ড শোল্ডার", "মোটরওয়ের জরুরি পাশ", "Motorway"],
+  ["slip road", "স্লিপ রোড", "মোটরওয়েতে ওঠা–নামার সংযোগ পথ", "Motorway"],
+  ["central reservation", "সেন্ট্রাল রিজার্ভেশন", "দুই carriageway-এর মাঝের বিভাজক", "Road"],
+  ["contraflow", "কনট্রাফ্লো", "স্বাভাবিক দিকের বিপরীতে সাময়িক traffic flow", "Motorway"],
+  ["red X", "রেড এক্স", "লেন বন্ধ; ওই লেনে চলা নিষেধ", "Motorway"],
+  ["blind spot", "ব্লাইন্ড স্পট", "mirror-এ দেখা যায় না এমন অংশ", "Safety"],
+  ["tailgating", "টেইলগেটিং", "সামনের গাড়ির খুব কাছে চলা", "Safety"],
+  ["stopping distance", "স্টপিং ডিস্ট্যান্স", "ভাবার ও ব্রেক করার মোট দূরত্ব", "Numbers"],
+  ["thinking distance", "থিংকিং ডিস্ট্যান্স", "বিপদ দেখে প্রতিক্রিয়া শুরুর আগের দূরত্ব", "Numbers"],
+  ["braking distance", "ব্রেকিং ডিস্ট্যান্স", "ব্রেক চাপার পর থামার দূরত্ব", "Numbers"],
+  ["aquaplaning", "অ্যাকুয়াপ্ল্যানিং", "পানির ওপর tyre grip হারানো", "Weather"],
+  ["skid", "স্কিড", "চাকা পিছলে নিয়ন্ত্রণ হারানো", "Weather"],
+  ["dazzle", "ড্যাজল", "তীব্র আলোয় চোখ ধাঁধিয়ে যাওয়া", "Weather"],
+  ["vulnerable road user", "ভালনারেবল রোড ইউজার", "সহজে ঝুঁকিতে পড়েন এমন সড়ক ব্যবহারকারী", "Road users"],
+  ["pedestrian", "পেডেস্ট্রিয়ান", "পথচারী", "Road users"],
+  ["equestrian", "ইকুয়েস্ট্রিয়ান", "ঘোড়সওয়ার", "Road users"],
+  ["pelican crossing", "পেলিক্যান ক্রসিং", "signal-controlled pedestrian crossing", "Crossings"],
+  ["puffin crossing", "পাফিন ক্রসিং", "sensor-controlled pedestrian crossing", "Crossings"],
+  ["toucan crossing", "টুক্যান ক্রসিং", "pedestrian ও cyclist একসঙ্গে পার হতে পারে", "Crossings"],
+  ["zebra crossing", "জেব্রা ক্রসিং", "কালো–সাদা pedestrian crossing", "Crossings"],
+  ["level crossing", "লেভেল ক্রসিং", "রাস্তা ও railway একই সমতলে মিলেছে", "Crossings"],
+  ["developing hazard", "ডেভেলপিং হ্যাজার্ড", "যে বিপদে চালককে ব্যবস্থা নেওয়া শুরু করতে হয়", "Hazard"],
+  ["potential hazard", "পোটেনশিয়াল হ্যাজার্ড", "সম্ভাব্য কিন্তু এখনো developing নয়", "Hazard"],
+  ["hazard perception", "হ্যাজার্ড পারসেপশন", "বিপদ দ্রুত শনাক্ত করার পরীক্ষা", "Hazard"],
+  ["breakdown", "ব্রেকডাউন", "যান্ত্রিক সমস্যায় গাড়ি থেমে যাওয়া", "Incidents"],
+  ["casualty", "ক্যাজুয়ালটি", "দুর্ঘটনায় আহত ব্যক্তি", "Incidents"],
+  ["emergency services", "ইমার্জেন্সি সার্ভিসেস", "পুলিশ, অ্যাম্বুলেন্স বা ফায়ার সার্ভিস", "Incidents"],
+  ["defibrillator (AED)", "ডিফিব্রিলেটর", "cardiac arrest-এ ব্যবহৃত স্বয়ংক্রিয় যন্ত্র", "First aid"],
+  ["CPR", "সি-পি-আর", "শ্বাস ও circulation বজায় রাখার জরুরি পদ্ধতি", "First aid"],
+] as const;
+
+export const hazardSteps = [
+  { en: "Scan far ahead and keep checking mirrors", bn: "সামনে দূর পর্যন্ত দেখুন এবং mirror পরীক্ষা করুন" },
+  { en: "Notice potential hazards without clicking automatically", bn: "সম্ভাব্য বিপদ লক্ষ্য করুন, কিন্তু অকারণে click করবেন না" },
+  { en: "Click when the hazard starts to develop and needs a response", bn: "বিপদ developing হয়ে ব্যবস্থা দরকার হলে click করুন" },
+  { en: "A second natural click is reasonable if the situation clearly develops", bn: "পরিস্থিতি স্পষ্টভাবে বদলালে স্বাভাবিকভাবে দ্বিতীয় click করা যায়" },
+  { en: "Never click continuously or in a repeated pattern", bn: "একটানা বা একই pattern-এ কখনো click করবেন না" },
+  { en: "Each scored hazard is worth up to 5; earlier valid recognition earns more", bn: "প্রতি scored hazard সর্বোচ্চ ৫; আগে সঠিকভাবে চিনলে বেশি নম্বর" },
+];
+
+export const updateWeek: WeekData = {
+  week: "2026",
+  title: "CPR and defibrillator update",
+  rules: {
+    "01": { title: "Recognise cardiac arrest", explanation_en: "A person in cardiac arrest is unresponsive and not breathing normally.", explanation_bn: "Cardiac arrest হলে ব্যক্তি সাড়া দেন না এবং স্বাভাবিকভাবে শ্বাস নেন না।" },
+    "02": { title: "Call and start CPR", explanation_en: "Call 999 on speakerphone and start CPR immediately.", explanation_bn: "Speakerphone-এ 999 কল করে সঙ্গে সঙ্গে CPR শুরু করুন।" },
+    "03": { title: "Compression depth", explanation_en: "For an adult, press the chest down by 5 to 6 centimetres.", explanation_bn: "প্রাপ্তবয়স্কের বুক ৫–৬ সেন্টিমিটার নিচে চাপুন।" },
+    "04": { title: "Public AED", explanation_en: "Anyone can use a public-access AED; follow its spoken or visual instructions.", explanation_bn: "যে কেউ public AED ব্যবহার করতে পারেন; যন্ত্রের কথা বা ছবির নির্দেশ মানুন।" },
+    "05": { title: "Get an AED", explanation_en: "If another person is present, ask them to find an AED while you continue CPR.", explanation_bn: "আর কেউ থাকলে, আপনি CPR চালিয়ে যাওয়ার সময় তাকে AED খুঁজতে বলুন।" },
+  },
+  questions: [
+    { id: "U26Q1", rule_id: "01", question_en: "Which signs most strongly suggest cardiac arrest?", question_bn: "কোন লক্ষণগুলো cardiac arrest সবচেয়ে বেশি বোঝায়?", options: ["They are coughing loudly — তারা জোরে কাশি দিচ্ছেন", "They are unresponsive and not breathing normally — সাড়া দিচ্ছেন না ও স্বাভাবিক শ্বাস নেই", "They have a small cut — ছোট কাটা আছে", "They can answer questions — প্রশ্নের উত্তর দিতে পারছেন"], correct_index: 1 },
+    { id: "U26Q2", rule_id: "02", question_en: "What should you do first when someone is unresponsive and not breathing normally?", question_bn: "কেউ সাড়া না দিলে ও স্বাভাবিক শ্বাস না নিলে প্রথমে কী করবেন?", options: ["Give them food — খাবার দিন", "Wait for ten minutes — দশ মিনিট অপেক্ষা করুন", "Call 999 and start CPR — 999 কল করে CPR শুরু করুন", "Put them in your car — গাড়িতে তুলুন"], correct_index: 2 },
+    { id: "U26Q3", rule_id: "03", question_en: "How deep should adult chest compressions normally be?", question_bn: "প্রাপ্তবয়স্কের chest compression সাধারণত কত গভীর হবে?", options: ["1–2 cm — ১–২ সেমি", "3–4 cm — ৩–৪ সেমি", "5–6 cm — ৫–৬ সেমি", "10–15 cm — ১০–১৫ সেমি"], correct_index: 2 },
+    { id: "U26Q4", rule_id: "04", question_en: "Who can use a public-access defibrillator (AED)?", question_bn: "Public-access defibrillator (AED) কে ব্যবহার করতে পারেন?", options: ["Doctors only — শুধু ডাক্তার", "Paramedics only — শুধু paramedic", "First aiders only — শুধু first aider", "Anyone — যে কেউ"], correct_index: 3 },
+    { id: "U26Q5", rule_id: "04", question_en: "How should you use an AED?", question_bn: "AED কীভাবে ব্যবহার করবেন?", options: ["Ignore its prompts — নির্দেশ উপেক্ষা করুন", "Follow its spoken or visual instructions — যন্ত্রের কথা বা ছবির নির্দেশ মানুন", "Use it only after an hour — এক ঘণ্টা পরে ব্যবহার করুন", "Place it under the casualty — আহতের নিচে রাখুন"], correct_index: 1 },
+    { id: "U26Q6", rule_id: "05", question_en: "Another person is with you during a cardiac arrest. What should you ask them to do?", question_bn: "Cardiac arrest-এর সময় আরেকজন সঙ্গে থাকলে তাকে কী করতে বলবেন?", options: ["Film the scene — ভিডিও করতে", "Direct traffic only — শুধু traffic সামলাতে", "Find an AED while you give CPR — আপনি CPR দেওয়ার সময় AED খুঁজতে", "Leave without calling — কল না করে চলে যেতে"], correct_index: 2 },
+    { id: "U26Q7", rule_id: "02", question_en: "Why is speakerphone useful when calling 999 during CPR?", question_bn: "CPR-এর সময় 999 কল speakerphone-এ রাখা কেন উপকারী?", options: ["It ends the call faster — কল দ্রুত শেষ হয়", "You can continue helping while following instructions — নির্দেশ শুনে সাহায্য চালিয়ে যেতে পারেন", "It blocks other callers — অন্য কল বন্ধ করে", "It finds your licence — licence খুঁজে দেয়"], correct_index: 1 },
+    { id: "U26Q8", rule_id: "01", question_en: "Is a heart attack always the same as cardiac arrest?", question_bn: "Heart attack কি সবসময় cardiac arrest-এর একই বিষয়?", options: ["Yes, always — হ্যাঁ, সবসময়", "No; a heart attack is blocked blood flow and can sometimes trigger cardiac arrest — না; heart attack হলো blood flow বন্ধ হওয়া এবং কখনো cardiac arrest ঘটাতে পারে", "Only at night — শুধু রাতে", "Only in a vehicle — শুধু গাড়িতে"], correct_index: 1 },
+  ],
+};
+
+export const officialLinks = [
+  { label: "The Highway Code", url: "https://www.gov.uk/guidance/the-highway-code" },
+  { label: "Free official practice test", url: "https://www.gov.uk/take-practice-theory-test" },
+  { label: "Theory test guide", url: "https://www.gov.uk/theory-test" },
+];

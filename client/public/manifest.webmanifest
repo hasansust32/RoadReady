@@ -1,0 +1,12 @@
+{
+  "name": "RoadReady — UK Driving Theory বাংলা",
+  "short_name": "RoadReady",
+  "description": "Bilingual UK driving theory practice, mock tests and revision.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f4",
+  "theme_color": "#183f55",
+  "icons": [
+    { "src": "roadready-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
