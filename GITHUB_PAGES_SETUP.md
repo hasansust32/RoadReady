@@ -11,6 +11,6 @@ The deployment workflow is already configured in `.github/workflows/deploy.yml`.
 
 The application will be available at:
 
-`https://hasansust32.github.io/UK_Driving_Theory_Flashcard/`
+`https://hasansust32.github.io/RoadReady/`
 
 If the workflow fails, open its log and confirm it completed `pnpm install`, `pnpm run check`, and `pnpm run build:client`.

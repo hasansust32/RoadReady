@@ -23,8 +23,8 @@ Progress is stored in the browser with `localStorage`; no account or database is
 Requirements: Node.js 20 or newer and pnpm.
 
 ```bash
-git clone https://github.com/hasansust32/UK_Driving_Theory_Flashcard.git
-cd UK_Driving_Theory_Flashcard
+git clone https://github.com/hasansust32/RoadReady.git
+cd RoadReady
 pnpm install
 pnpm run dev
 ```
